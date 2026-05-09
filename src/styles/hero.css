@@ -1,0 +1,181 @@
+/* --- HERO SECTION BASE --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  /* Deep Blue Professional Base */
+  background-color: #001a33; 
+  background-image: 
+    radial-gradient(circle at 50% 50%, #002d62 0%, #001a33 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* --- TECH GRID OVERLAY --- */
+.hero-grid-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  /* Fades out the grid at the edges for a spotlight effect */
+  mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- DYNAMIC BACKGROUND DECORATION --- */
+.hero-glow-1 {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+.hero-glow-2 {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+/* --- CONTENT STRUCTURE --- */
+.hero-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+/* --- COMPONENTS --- */
+.hero-badge {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #38bdf8;
+}
+
+.hero-main-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(40px, 6vw, 75px); 
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0;
+  color: #ffffff;
+}
+
+.text-highlight {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text; /* Add this line */
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-description {
+  font-size: clamp(17px, 2.2vw, 21px);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  max-width: 850px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.hero-contact-btn {
+  padding: 18px 42px;
+  background: #ffffff;
+  color: #001a33;
+  font-size: 17px;
+  font-weight: 800;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-contact-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero-secondary-btn {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-secondary-btn:hover {
+  border-bottom-color: #38bdf8;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+  .hero-section { padding: 80px 40px; }
+  .desktop-only { display: none; }
+}
+
+@media (max-width: 768px) {
+  .hero-section { padding: 60px 20px; }
+  .hero-actions { flex-direction: column; width: 100%; gap: 16px; }
+  .hero-contact-btn { width: 100%; justify-content: center; }
+  .hero-main-title { line-height: 1.2; }
+}

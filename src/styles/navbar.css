@@ -1,0 +1,148 @@
+.navbar {
+  background: #ffffff;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* STAYS IN FRONT OF HERO SECTION */
+  border-bottom: 1px solid #f1f5f9;
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-inner {
+  max-width: 1200px; /* SAME AS TOPBAR */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px; /* SAME AS TOPBAR */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* CRITICAL for dropdown positioning */
+}
+
+.navbar-logo img {
+  height: 42px;
+  display: block;
+}
+
+/* --- NAVIGATION LINKS --- */
+.nav-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+
+.nav-links-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  text-decoration: none;
+  padding: 10px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover { color: #00448f; }
+
+/* --- THE DISCIPLINED DROPDOWN RECTANGLE --- */
+.mega-menu-rect {
+  position: absolute;
+  top: 80px; /* Sits at bottom edge of navbar */
+  
+  /* ALIGNMENT:
+     Starts under 'Services' (320px from left - tweak if logo size differs)
+     Ends exactly at the right edge of the CTA button (24px from right) */
+  left: 320px; 
+  right: 24px;  
+  
+  background: #ffffff;
+  border-radius: 0 0 12px 12px;
+  padding: 35px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f1f5f9;
+  z-index: 10000;
+
+  /* Animation Logic */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mega-menu-rect.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --- PROFESSIONAL CONTENT STYLING --- */
+.mega-heading {
+  font-size: 11px; /* Smaller, crisp SaaS heading */
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f8fafc;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.mega-col a {
+  display: block;
+  font-size: 14px; /* Standard professional link size */
+  color: #334155;
+  text-decoration: none;
+  padding: 8px 0;
+  font-weight: 400;
+  transition: all 0.2s ease;
+}
+
+/* HOVER EFFECTS: BOLD, BLUE, SLIDE */
+.mega-col a:hover {
+  color: #00448f !important;
+  font-weight: 700 !important; /* Bold on hover */
+  transform: translateX(8px); /* Subtle horizontal slide */
+}
+
+/* --- CTA BUTTON --- */
+.get-proposal-button {
+  background: #00448f;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.get-proposal-button:hover {
+  background: #00336b;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .nav-container, .get-proposal-button { display: none; }
+}

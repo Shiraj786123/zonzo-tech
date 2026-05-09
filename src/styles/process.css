@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+.ps-wrapper {
+  background: #001e3c; /* Professional Dark Navy */
+  padding: clamp(80px, 10vh, 140px) 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.ps-header {
+  text-align: center;
+  margin-bottom: clamp(60px, 8vh, 100px);
+}
+
+.ps-main-title {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Shimmer Animation for Heading */
+.shimmer-text span {
+  background: linear-gradient(90deg, #38bdf8, #ffffff, #38bdf8);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+@keyframes shimmer { to { background-position: 200% center; } }
+
+.ps-subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  color: #bae6fd;
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- THE GRID SYSTEM (Supports all screens) --- */
+.ps-grid {
+  display: grid;
+  /* 5 columns on large screens */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+/* Desktop Connecting Line */
+.ps-desktop-connector {
+  position: absolute;
+  top: 145px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  border-top: 2px dashed rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+/* --- THE CARD --- */
+.ps-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 60px 20px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
+}
+
+.ps-card:hover {
+  transform: translateY(-12px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--step-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Number Badge */
+.ps-number-pill {
+  position: absolute;
+  top: -15px;
+  padding: 6px 20px;
+  border-radius: 100px;
+  color: #001e3c; /* Dark text on bright badge */
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* White Icon Circle */
+.ps-icon-outer {
+  width: 90px;
+  height: 90px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.ps-card:hover .ps-icon-outer {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.ps-card-title {
+  font-size: clamp(16px, 1.5vw, 19px);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.ps-card-desc {
+  font-size: 14.5px;
+  color: #f1f5f9;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.ps-hover-line {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.ps-card:hover .ps-hover-line { width: 40%; }
+
+/* --- RESPONSIVENESS (Media Queries) --- */
+
+/* Laptops & Tablets (Wrap to 3 + 2) */
+@media (max-width: 1280px) {
+  .ps-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 25px;
+  }
+  .ps-desktop-connector { display: none; }
+}
+
+/* Tablets (Wrap to 2 columns) */
+@media (max-width: 900px) {
+  .ps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (Single Column) */
+@media (max-width: 600px) {
+  .ps-grid {
+    grid-template-columns: 1fr;
+  }
+  .ps-card {
+    max-width: 100%;
+    padding: 50px 25px 35px;
+  }
+  .ps-main-title { font-size: 32px; }
+}

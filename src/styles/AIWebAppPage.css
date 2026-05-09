@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  --navy: #001e3c;
+  --blue: #00448f;
+  --accent: #38bdf8;
+  --slate: #334155;
+  --bg-soft: #f4f9ff;
+  --white: #ffffff;
+}
+
+.aiwa-master-wrapper {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  background: var(--white);
+}
+
+.aiwa-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- MOVING GRADIENT HEADINGS --- */
+.aiwa-moving-gradient {
+  background: linear-gradient(90deg, #ffffff, #38bdf8, #ffffff, #ffffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.aiwa-moving-gradient-navy {
+  background: linear-gradient(90deg, #001e3c, #3b82f6, #001e3c, #001e3c);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.aiwa-moving-gradient-white {
+  background: linear-gradient(90deg, #ffffff, #38bdf8, #ffffff, #ffffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer { to { background-position: 200% center; } }
+
+/* --- HERO --- */
+.aiwa-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  padding: 120px 0 160px;
+  text-align: center;
+}
+
+.aiwa-hero-title { font-size: clamp(34px, 6vw, 60px); font-weight: 800; line-height: 1.1; margin-bottom: 24px; color: white; }
+.aiwa-hero-description { font-size: 19px; color: #fff; opacity: 0.9; max-width: 850px; margin: 0 auto 40px; line-height: 1.7; }
+.aiwa-white-trust { color: #fff; opacity: 0.7; font-size: 14px; margin-top: 30px; }
+
+/* --- STATS BAR --- */
+.aiwa-stats-bar { margin-top: -60px; position: relative; z-index: 10; }
+.aiwa-stats-row { display: flex; justify-content: space-around; background: white; padding: 40px; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 20px; }
+.aiwa-stat-item { flex: 1; display: flex; align-items: center; gap: 15px; min-width: 200px; }
+.aiwa-stat-icon-circle { width: 50px; height: 50px; background: var(--bg-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.aiwa-stat-num { display: block; font-size: 28px; font-weight: 800; color: var(--blue); }
+.aiwa-stat-lab { font-size: 13px; font-weight: 600; color: var(--slate); }
+
+/* --- MARQUEE (MOVING ROWS) --- */
+.aiwa-marquee-container { overflow: hidden; display: flex; width: 100%; padding: 30px 0; }
+.aiwa-marquee-track { display: flex; gap: 30px; will-change: transform; }
+.aiwa-marquee-track:hover { animation-play-state: paused; }
+
+.aiwa-row-card, .aiwa-row-card-white, .aiwa-process-card-row, .aiwa-tech-card {
+  min-width: 350px; max-width: 350px; background: white; padding: 40px; border-radius: 24px; border: 1px solid #f1f5f9; flex-shrink: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.aiwa-row-card-white { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; }
+.aiwa-navy-bg { background: var(--navy); padding: 100px 0; }
+
+/* --- PROCESS --- */
+.process-step-circle { width: 70px; height: 70px; background: var(--bg-soft); border-radius: 50%; margin: 0 auto 20px; position: relative; display: flex; align-items: center; justify-content: center; }
+.step-tag { position: absolute; top: -5px; right: -5px; background: var(--blue); color: white; width: 28px; height: 28px; border-radius: 50%; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+/* --- SECTION GENERAL --- */
+.aiwa-section { padding: 100px 0; }
+.aiwa-soft-bg { background: var(--bg-soft); }
+.aiwa-section-title { font-size: 38px; font-weight: 800; color: var(--navy); text-align: center; margin-bottom: 50px; }
+
+/* --- PILLS --- */
+.aiwa-examples-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 40px; }
+.aiwa-example-pill { background: white; padding: 18px 24px; border-radius: 100px; font-size: 14px; font-weight: 600; color: var(--navy); display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.pill-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+
+.aiwa-tech-card h4 { margin-top: 15px; color: var(--navy); font-size: 18px; text-align: center; }
+.tech-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; justify-content: center; }
+.tech-pills span { background: var(--bg-soft); color: var(--blue); padding: 6px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; }
+
+/* --- FAQ --- */
+.aiwa-faq-wrap { max-width: 850px; margin: 0 auto; }
+.aiwa-faq-item { border-bottom: 1px solid #e2e8f0; padding: 25px 0; cursor: pointer; }
+.aiwa-faq-q { display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 700; color: var(--navy); }
+.aiwa-faq-a { padding-top: 15px; color: var(--slate); line-height: 1.7; font-size: 16px; }
+
+/* --- BUTTONS --- */
+.btn-glow-primary { background: var(--accent); color: var(--navy); padding: 16px 36px; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+.btn-glow-primary:hover { box-shadow: 0 0 25px rgba(56, 189, 248, 0.4); transform: translateY(-3px); }
+.btn-outline-white { border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; margin-left: 15px; }
+
+.white-txt { color: #fff !important; }
+.white-txt-muted { color: rgba(255,255,255,0.7) !important; font-size: 15px; line-height: 1.6; }

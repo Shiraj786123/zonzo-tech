@@ -1,0 +1,58 @@
+.topbar {
+  background: #002c5f; /* Your primary dark color */
+  color: #ffffff;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 10001; /* Higher than navbar */
+  position: relative;
+}
+
+.topbar-inner {
+  /* Using 1200px to match your standard container width */
+  max-width: 1200px; 
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px; /* MATCHES NAVBAR PADDING EXACTLY */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar-left {
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.topbar-link {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.topbar-link:hover {
+  color: #ffffff;
+}
+
+/* Icon Colors */
+.topbar-link i.fa-envelope { color: #38bdf8; }
+.topbar-link i.fa-whatsapp { color: #22c55e; }
+
+@media (max-width: 768px) {
+  .topbar-left { display: none; }
+  .topbar-right { justify-content: center; width: 100%; }
+}

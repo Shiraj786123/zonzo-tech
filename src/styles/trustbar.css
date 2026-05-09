@@ -1,0 +1,157 @@
+.trust-bar-wrapper {
+  background: #ffffff;
+  padding: 100px 24px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.trust-bar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trust-bar-upper-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.trust-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  cursor: default;
+}
+
+/* Vertical Divider for Desktop */
+.stat-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: #e2e8f0;
+}
+
+.stat-value-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.stat-main-number {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.stat-symbol {
+  font-size: 28px;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+/* Stars Styling */
+.star-container {
+  display: flex;
+  gap: 2px;
+  margin-top: 8px;
+}
+
+.star {
+  font-size: 18px;
+}
+
+.star.filled {
+  color: #f59e0b; /* Gold/Amber */
+}
+
+/* This creates the 4.9 partial fill effect */
+.star.partial {
+  position: relative;
+  color: #e2e8f0; /* Gray background for star */
+}
+
+.star.partial::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 90%; /* 4.9 means 90% of the last star is filled */
+  overflow: hidden;
+  color: #f59e0b;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-text-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0.01em;
+}
+
+.stat-underline {
+  width: 20px;
+  height: 3px;
+  border-radius: 10px;
+  transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.stat-card:hover .stat-underline {
+  width: 50px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1024px) {
+  .stat-main-number { font-size: 42px; }
+  .stat-card { padding: 20px 10px; }
+}
+
+@media (max-width: 768px) {
+  .trust-bar-wrapper { padding: 60px 20px; }
+  
+  .trust-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 0;
+  }
+
+  .stat-card:nth-child(even)::after { display: none; }
+  
+  .stat-card:nth-child(1), .stat-card:nth-child(2) {
+    border-bottom: 1px solid #f1f5f9;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-card::after { display: none; }
+  .stat-card { border-bottom: 1px solid #f1f5f9; }
+  .stat-card:last-child { border-bottom: none; }
+  .stat-main-number { font-size: 48px; }
+}
