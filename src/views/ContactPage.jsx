@@ -13,10 +13,30 @@ const ContactPage = () => {
   const tickerItems = ["AI SOLUTIONS", "WEB DEVELOPMENT", "SEO OPTIMIZATION", "UI/UX DESIGN", "E-COMMERCE", "CLOUD SYSTEMS"];
 
   const trustPillars = [
-    { title: "24 Hour Response Guarantee", desc: "We respond to every enquiry within 24 hours — no chasing, no waiting weeks for a quote." },
-    { title: "No Obligation Consultation", desc: "Our initial consultation is completely free with no commitment required — just honest advice." },
-    { title: "Transparent Pricing", desc: "No hidden fees. Every proposal is clear, itemised and agreed upfront before any work begins." },
-    { title: "Dedicated Project Team", desc: "Direct access to your project team — not an account manager. Real people, real communication." }
+    { 
+      title: "24 Hour Response Guarantee", 
+      desc: "We respond to every enquiry within 24 hours — no chasing, no waiting weeks for a quote.",
+      bgColor: "#eff6ff", 
+      iconBg: "#3b82f6" 
+    },
+    { 
+      title: "No Obligation Consultation", 
+      desc: "Our initial consultation is completely free with no commitment required — just honest advice.",
+      bgColor: "#f5f3ff", 
+      iconBg: "#8b5cf6"
+    },
+    { 
+      title: "Transparent Pricing", 
+      desc: "No hidden fees. Every proposal is clear, itemised and agreed upfront before any work begins.",
+      bgColor: "#fff7ed", 
+      iconBg: "#f97316"
+    },
+    { 
+      title: "Dedicated Project Team", 
+      desc: "Direct access to your project team — not an account manager. Real people, real communication.",
+      bgColor: "#f0fdf4", 
+      iconBg: "#22c55e"
+    }
   ];
 
   const faqs = [
@@ -42,11 +62,10 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Floating Contact Bar - UPDATED WITH LINKS */}
+      {/* Floating Contact Bar - Now Clickable */}
       <section className="cp__info_bar">
         <div className="cp__container">
           <div className="cp__info_grid">
-            
             <a href="mailto:info@zonzoctech.com" className="cp__info_card">
               <div className="cp__icon_box blue"><Mail size={20} color="white"/></div>
               <div className="cp__info_content">
@@ -54,7 +73,6 @@ const ContactPage = () => {
                 <p className="cp__info_value">info@zonzoctech.com</p>
               </div>
             </a>
-
             <a href="tel:+94740309534" className="cp__info_card">
               <div className="cp__icon_box blue"><Phone size={20} color="white"/></div>
               <div className="cp__info_content">
@@ -62,7 +80,6 @@ const ContactPage = () => {
                 <p className="cp__info_value">+94 74 030 9534</p>
               </div>
             </a>
-
             <a href="https://wa.me/94740309534" target="_blank" rel="noopener noreferrer" className="cp__info_card">
               <div className="cp__icon_box green"><MessageCircle size={20} color="white"/></div>
               <div className="cp__info_content">
@@ -70,7 +87,6 @@ const ContactPage = () => {
                 <p className="cp__info_value">Chat instantly</p>
               </div>
             </a>
-
             <div className="cp__info_card">
               <div className="cp__icon_box blue"><MapPin size={20} color="white"/></div>
               <div className="cp__info_content">
@@ -78,7 +94,6 @@ const ContactPage = () => {
                 <p className="cp__info_value">UK · USA · EU</p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -97,14 +112,19 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Trust Pillars */}
+      {/* Trust Pillars Section - Updated for 4 in a row with unique colors */}
       <section className="cp__section">
         <div className="cp__container">
-          <h2 className="cp__heading">Why Businesses Trust ZonzocTech</h2>
+          <div className="cp__heading_wrapper">
+            <h2 className="cp__heading">Why Businesses Trust ZonzocTech</h2>
+            <div className="cp__heading_line"></div>
+          </div>
           <div className="cp__trust_grid">
             {trustPillars.map((pillar, i) => (
-              <div key={i} className="cp__trust_card">
-                <div className="cp__check_box"><Check size={18} color="white" /></div>
+              <div key={i} className="cp__trust_card" style={{ backgroundColor: pillar.bgColor }}>
+                <div className="cp__check_box" style={{ backgroundColor: pillar.iconBg }}>
+                  <Check size={18} color="white" strokeWidth={3} />
+                </div>
                 <h3>{pillar.title}</h3>
                 <p>{pillar.desc}</p>
               </div>
