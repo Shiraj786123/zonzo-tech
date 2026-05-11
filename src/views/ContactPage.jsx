@@ -42,31 +42,35 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Floating Contact Bar */}
+      {/* Floating Contact Bar - UPDATED WITH LINKS */}
       <section className="cp__info_bar">
         <div className="cp__container">
           <div className="cp__info_grid">
-            <div className="cp__info_card">
+            
+            <a href="mailto:info@zonzoctech.com" className="cp__info_card">
               <div className="cp__icon_box blue"><Mail size={20} color="white"/></div>
               <div className="cp__info_content">
                 <span className="cp__info_label">EMAIL US</span>
                 <p className="cp__info_value">info@zonzoctech.com</p>
               </div>
-            </div>
-            <div className="cp__info_card">
+            </a>
+
+            <a href="tel:+94740309534" className="cp__info_card">
               <div className="cp__icon_box blue"><Phone size={20} color="white"/></div>
               <div className="cp__info_content">
                 <span className="cp__info_label">CALL US</span>
                 <p className="cp__info_value">+94 74 030 9534</p>
               </div>
-            </div>
-            <div className="cp__info_card">
+            </a>
+
+            <a href="https://wa.me/94740309534" target="_blank" rel="noopener noreferrer" className="cp__info_card">
               <div className="cp__icon_box green"><MessageCircle size={20} color="white"/></div>
               <div className="cp__info_content">
                 <span className="cp__info_label">WHATSAPP</span>
                 <p className="cp__info_value">Chat instantly</p>
               </div>
-            </div>
+            </a>
+
             <div className="cp__info_card">
               <div className="cp__icon_box blue"><MapPin size={20} color="white"/></div>
               <div className="cp__info_content">
@@ -74,6 +78,7 @@ const ContactPage = () => {
                 <p className="cp__info_value">UK · USA · EU</p>
               </div>
             </div>
+
           </div>
         </div>
       </section>
