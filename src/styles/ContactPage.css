@@ -49,10 +49,10 @@
   line-height: 1.6;
 }
 
-/* FLOATING INFO BAR - Fixed for vertical gap and 4 columns */
+/* FLOATING INFO BAR */
 .cp__info_bar {
   margin-top: -70px;
-  margin-bottom: 80px; /* Space between cards and ticker */
+  margin-bottom: 80px; 
   position: relative;
   z-index: 10;
   padding: 0 24px;
@@ -60,7 +60,7 @@
 
 .cp__info_grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 Columns on desktop */
+  grid-template-columns: repeat(4, 1fr); 
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -74,11 +74,22 @@
   align-items: center;
   gap: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   border: 1px solid #f1f5f9;
+  /* Link Fixes */
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
-.cp__info_card:hover { transform: translateY(-5px); }
+.cp__info_card:hover { 
+  transform: translateY(-5px); 
+  border-color: #00448f;
+}
+
+.cp__info_card:hover .cp__info_value {
+  color: #00448f;
+}
 
 .cp__info_content {
   overflow: hidden;
@@ -124,7 +135,7 @@
   background: linear-gradient(90deg, #00448f, #3b82f6, #10b981, #00448f);
   background-size: 200% auto;
   -webkit-background-clip: text;
-  background-clip: text; /* Add this line */
+  background-clip: text; 
   -webkit-text-fill-color: transparent;
   animation: shine 5s linear infinite;
 }
@@ -288,4 +299,3 @@
   .cp__form_grid { grid-template-columns: 1fr; }
   .cp__section { padding: 60px 24px; }
 }
-
